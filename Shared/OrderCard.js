@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { View, Text, StyleSheet } from "react-native";
-import { Picker } from "native-base";
+import { Picker, Item } from "native-base";
 import Icon from "react-native-vector-icons/FontAwesome";
 import TrafficLight from "./StyledComponents/TrafficLight";
 import EasyButton from "./StyledComponents/EasyButton";
@@ -11,6 +11,7 @@ import axios from "axios";
 import baseURL from "../assets/common/baseUrl";
 
 const codes = [
+  {name: "Update Status", code:"3"},
   { name: "pending", code: "3" },
   { name: "shopping", code: "2" },
   { name: "delivered", code: "1" },
@@ -79,7 +80,7 @@ const OrderCard = (props) => {
           Toast.show({
             topOffset: 60,
             type: "success",
-            text1: "Order Edited",
+            text1: "Order Status Updated",
             text2: "",
           });
           setTimeout(() => {
@@ -117,10 +118,11 @@ const OrderCard = (props) => {
         </View>
         {props.editMode ? (
           <View>
+            <Item picker>
             <Picker
               mode="dropdown"
               iosIcon={<Icon color={"#007aff"} name="arrow-down" />}
-              style={{ width: 70, height:50 }}
+              style={{ width: 50, height:50 }}
               selectedValue={statusChange}
               placeholder="Change Status"
               placeholderStyle={{ color: "#007aff" }}
@@ -133,6 +135,7 @@ const OrderCard = (props) => {
                 );
               })}
             </Picker>
+            </Item>
             <EasyButton secondary large onPress={() => updateOrder()}>
               <Text style={{ color: "white" }}>Update</Text>
             </EasyButton>

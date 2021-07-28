@@ -25,13 +25,10 @@ const ListHeader = () => {
     <View elevation={1} style={styles.listHeader}>
       <View style={styles.headerItem}></View>
       <View style={styles.headerItem}>
-        <Text style={{ fontWeight: "600" }}>Description</Text>
+        <Text style={{ fontWeight: "600" }}>Item</Text>
       </View>
       <View style={styles.headerItem}>
-        <Text style={{ fontWeight: "600" }}>Name</Text>
-      </View>
-      <View style={styles.headerItem}>
-        <Text style={{ fontWeight: "600" }}>Category</Text>
+        <Text style={{ fontWeight: "600" }}>Detail</Text>
       </View>
       <View style={styles.headerItem}>
         <Text style={{ fontWeight: "600" }}>Price</Text>
@@ -121,11 +118,11 @@ const Products = (props) => {
         </EasyButton>
       </View>
       <View>
-        <Header searchBar rounded>
+        <Header searchBar rounded style={{backgroundColor: "#479030"}}>
           <Item style={{ padding: 5 }}>
             <Icon name="search" />
             <Input
-              placeholder="Search"
+              placeholder="Search for Product"
               onChangeText={(text) => searchProduct(text)}
             />
           </Item>
@@ -162,7 +159,7 @@ const styles = StyleSheet.create({
   },
   headerItem: {
     margin: 3,
-    width: width / 6,
+    width:100,
   },
   spinner: {
     height: height / 2,

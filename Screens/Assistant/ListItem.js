@@ -85,8 +85,9 @@ const ListItem = (props) => {
                     resizeMode="contain"
                     style={styles.image}
                 />
-                <Text style={styles.item}>{props.description}</Text>
                 <Text style={styles.item} numberOfLines={1} ellipsizeMode="tail">{props.name}</Text>
+                <Text style={styles.item}>{props.description}</Text>
+
                 <Text style={styles.item}>UGX {props.price}</Text>
             </TouchableOpacity>
         </View>
@@ -107,8 +108,8 @@ const styles = StyleSheet.create({
     },
     item: {
         flexWrap: "wrap",
-        margin: 3,
-        width: width / 6
+        margin: 1,
+        width: 130
     },
     centeredView: {
         flex: 1,

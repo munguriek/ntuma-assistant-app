@@ -20,7 +20,7 @@ const Main = () => {
 
   return (
     <Tab.Navigator
-      initialRouteName="Home"
+      initialRouteName="User"
       tabBarOptions={{
         keyboardHidesTabBar: true,
         showLabel: false,

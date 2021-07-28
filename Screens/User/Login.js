@@ -18,7 +18,7 @@ const Login = (props) => {
 
   useEffect(() => {
     if (context.stateUser.isAuthenticated === true) {
-      props.navigation.navigate("User Profile");
+      props.navigation.navigate("Assitant");
     }
   }, [context.stateUser.isAuthenticated]);
 
@@ -36,7 +36,7 @@ const Login = (props) => {
   };
 
   return (
-    <FormContainer title={"Login"}>
+    <FormContainer title={"Ntuma Assistant"}>
       <Input
         placeholder={"Enter Phone"}
         name={"phone"}

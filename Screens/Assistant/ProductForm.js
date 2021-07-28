@@ -28,6 +28,7 @@ const ProductForm = (props) => {
   const [image, setImage] = useState();
   const [mainImage, setMainImage] = useState();
   const [price, setPrice] = useState();
+  const [priceRange, setPriceRange] = useState();
   const [category, setCategory] = useState();
   const [countInStock, setCountInStock] = useState();
   const [rating, setRating] = useState(0);
@@ -46,6 +47,7 @@ const ProductForm = (props) => {
             setItem(props.route.params.item);
             setName(props.route.params.item.name);
             setPrice(props.route.params.item.price.toString());
+            setPriceRange(props.route.params.item.priceRange);
             setDescription(props.route.params.item.description);
             setMainImage(props.route.params.item.image);
             setImage(props.route.params.item.image);
@@ -117,6 +119,7 @@ const ProductForm = (props) => {
         formData.append("name", name);
         formData.append("price", price);
         formData.append("description", description);
+        formData.append("priceRange", priceRange);
         formData.append("category", category);
         formData.append("countInStock", countInStock);
         formData.append("detailedDescription", detailedDescription);
@@ -212,6 +215,16 @@ const ProductForm = (props) => {
         value={price}
         keyboardType={"numeric"}
         onChangeText={(text) => setPrice(text)}
+      />
+      <View style={styles.label}>
+        <Text style={{ textDecorationLine: "underline" }}>Price Range</Text>
+      </View>
+      <Input
+        placeholder="Price Range"
+        name="priceRange"
+        id="priceRange"
+        value={priceRange}
+        onChangeText={(text) => setPriceRange(text)}
       />
       <View style={styles.label}>
         <Text style={{ textDecorationLine: "underline" }}>Count in Stock</Text>
